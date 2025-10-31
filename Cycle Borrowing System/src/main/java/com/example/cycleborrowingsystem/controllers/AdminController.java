@@ -14,11 +14,9 @@ public class AdminController {
         String email = emailField.getText();
         String pass = passwordField.getText();
         if ("admin@cbs.local".equals(email) && "Admin@1234".equals(pass)) {
-            Alert a = new Alert(Alert.AlertType.INFORMATION);
-            a.setTitle("Admin");
-            a.setHeaderText("Welcome Admin");
-            a.setContentText("Admin dashboard not implemented yet.");
-            a.show();
+            try {
+                com.example.cycleborrowingsystem.SceneManager.switchScene("/com/example/cycleborrowingsystem/admin_dashboard.fxml");
+            } catch (Exception ignored) {}
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setTitle("Admin");

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.cycleborrowingsystem.controllers.AdminDashboardController" prefWidth="780" prefHeight="720">
+	<VBox spacing="12" AnchorPane.topAnchor="18" AnchorPane.leftAnchor="18" AnchorPane.rightAnchor="18" AnchorPane.bottomAnchor="18">
+		<HBox spacing="10" alignment="CENTER_LEFT">
+			<Label text="Admin Dashboard" style="-fx-font-size:20px; -fx-font-weight:600;"/>
+			<Pane HBox.hgrow="ALWAYS"/>
+			<Button fx:id="backBtn" text="Back"/>
+		</HBox>
+		<TabPane VBox.vgrow="ALWAYS">
+			<Tab text="Cycles" closable="false">
+				<VBox spacing="8">
+					<TableView fx:id="cyclesTable" VBox.vgrow="ALWAYS">
+						<columns>
+							<TableColumn fx:id="cIdCol" text="ID" prefWidth="80"/>
+							<TableColumn fx:id="cModelCol" text="Model" prefWidth="180"/>
+							<TableColumn fx:id="cOwnerCol" text="Owner" prefWidth="220"/>
+							<TableColumn fx:id="cLocationCol" text="Location" prefWidth="180"/>
+							<TableColumn fx:id="cBorrowedCol" text="Borrowed By" prefWidth="120"/>
+						</columns>
+					</TableView>
+					<HBox spacing="8" alignment="CENTER_RIGHT">
+						<Button fx:id="refreshCyclesBtn" text="Refresh"/>
+						<Button fx:id="forceReturnBtn" text="Force Return"/>
+						<Button fx:id="deleteCycleBtn" text="Delete"/>
+					</HBox>
+				</VBox>
+			</Tab>
+			<Tab text="Users" closable="false">
+				<VBox spacing="8">
+					<TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+						<columns>
+							<TableColumn fx:id="uIdCol" text="ID" prefWidth="100"/>
+							<TableColumn fx:id="uNameCol" text="Name" prefWidth="220"/>
+							<TableColumn fx:id="uEmailCol" text="Email" prefWidth="300"/>
+						</columns>
+					</TableView>
+					<HBox spacing="8" alignment="CENTER_RIGHT">
+						<Button fx:id="refreshUsersBtn" text="Refresh"/>
+						<Button fx:id="deleteUserBtn" text="Delete User"/>
+					</HBox>
+				</VBox>
+			</Tab>
+		</TabPane>
+	</VBox>
+</AnchorPane>
